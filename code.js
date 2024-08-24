@@ -7,18 +7,19 @@ function getComputerChoice() {
 
 getComputerChoice()
 
-let userInput = prompt("Enter your choice bro");
+
+
 function getHumanChoice() {
-    if (userInput.toLowerCase() === "Rock") {
-        alert("Wow! Rock");
-      }
-    elif (userInput.toLowerCase() === "Paper") {
-        alert("Wow! Paper");
-      }
-    elif (userInput.toLowerCase() === "Scissors") {
-        alert("Wow! Scissors");
-      }
-    else {
-        alert("Invalid input");
-    }
+  let userInput = prompt("Enter your choice bro");
+  if (userInput.toLowerCase() === "rock") {
+    alert("Wow! Rock");
+  } else if (userInput.toLowerCase() === "paper") {
+    alert("Wow! Paper");
+  } else if (userInput.toLowerCase() === "scissors") {
+    alert("Wow! Scissors");
+  } else {
+    alert("Invalid input");
+  }
 }
+
+getHumanChoice();

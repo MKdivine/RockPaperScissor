@@ -4,7 +4,7 @@ const computerScore = 0;
 
 function getComputerChoice() {
   console.log("PC CHOICE: ");
-  console.log(choice[Math.floor(Math.random() * 3)]);
+  return choice[Math.floor(Math.random() * 3)];
 }
 
 getComputerChoice();
@@ -36,7 +36,7 @@ function playRound(humanChoice, computerChoice) {
   }
 }
 
-const humanSelection = getHumanChoice();
-const computerSelection = getComputerChoice();
+let humanSelection = getHumanChoice();
+let computerSelection = getComputerChoice();
 
 playRound(humanSelection, computerSelection);

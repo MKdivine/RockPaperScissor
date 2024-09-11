@@ -1,13 +1,14 @@
 const choice = ["rock", "paper", "scissors"];
-const humanScore = 0;
-const computerScore = 0;
+let humanScore = 0;
+let computerScore = 0;
 
 function getComputerChoice() {
-  console.log("PC CHOICE: ");
-  return choice[Math.floor(Math.random() * 3)];
-}
 
-getComputerChoice();
+  const weed = choice[Math.floor(Math.random() * 3)];
+  console.log(`The computer chose ${weed}`);
+  return weed;
+  
+}
 
 function getHumanChoice() {
   // return the choice alert
@@ -18,7 +19,6 @@ function getHumanChoice() {
     return userInput;
   }
 }
-getHumanChoice();
 
 function playRound(humanChoice, computerChoice) {
   if (humanChoice === computerChoice) {

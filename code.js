@@ -2,14 +2,27 @@ const choice = ["rock", "paper", "scissors"];
 let humanScore = 0;
 let computerScore = 0;
 
-function getComputerChoice() {
+// Button functionality and start the game
 
+function startGame() {
+  console.log("Der Button wurde geklickt!");
+  //
+  let humanSelection = getHumanChoice();
+  let computerSelection = getComputerChoice();
+  playRound(humanSelection, computerSelection);
+}
+
+// Den Button mit querySelector auswählen und Event-Listener hinzufügen
+document.querySelector("#game").addEventListener("click", startGame);
+
+// Game PC Choice
+function getComputerChoice() {
   const weed = choice[Math.floor(Math.random() * 3)];
   console.log(`The computer chose ${weed}`);
   return weed;
-  
 }
 
+// Game Human Choice
 function getHumanChoice() {
   // return the choice alert
   let userInput = prompt("Enter your choice").toLowerCase();
@@ -35,8 +48,3 @@ function playRound(humanChoice, computerChoice) {
     computerScore++;
   }
 }
-
-let humanSelection = getHumanChoice();
-let computerSelection = getComputerChoice();
-
-playRound(humanSelection, computerSelection);

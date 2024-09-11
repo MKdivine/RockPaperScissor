@@ -34,17 +34,24 @@ function getHumanChoice() {
 }
 
 function playRound(humanChoice, computerChoice) {
-  if (humanChoice === computerChoice) {
-    console.log("It's a tie!");
-  } else if (
-    (humanChoice === "rock" && computerChoice === "scissors") ||
-    (humanChoice === "paper" && computerChoice === "rock") ||
-    (humanChoice === "scissors" && computerChoice === "paper")
-  ) {
-    console.log("You win!");
-    humanScore++;
-  } else {
-    console.log("You lose!");
-    computerScore++;
+  let n = 0;
+
+  while (n < 5) {
+    console.log(`Its round number ${n}`)
+    n++;
+
+    if (humanChoice === computerChoice) {
+      console.log("It's a tie!");
+    } else if (
+      (humanChoice === "rock" && computerChoice === "scissors") ||
+      (humanChoice === "paper" && computerChoice === "rock") ||
+      (humanChoice === "scissors" && computerChoice === "paper")
+    ) {
+      console.log("You win!");
+      humanScore++;
+    } else {
+      console.log("You lose!");
+      computerScore++;
+    }
   }
 }

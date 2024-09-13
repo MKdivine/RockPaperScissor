@@ -6,6 +6,7 @@ let computerScore = 0;
 
 function playGame(humanChoice, computerChoice) {
 
+
   if (humanChoice === computerChoice) {
     console.log("It's a tie!");
   } else if (
@@ -19,9 +20,6 @@ function playGame(humanChoice, computerChoice) {
     console.log("You lose!");
     computerScore++;
   }
-  if (humanScore >= 5 ||  computerScore < humanScore) {
-    console.log("Game Over!");
-  }
 }
 
 function startGame() {
@@ -33,8 +31,13 @@ function startGame() {
 }
 
 // Den Button mit querySelector auswählen und Event-Listener hinzufügen
-document.querySelector("#game").addEventListener("click", startGame);
-
+/* document.querySelector("#game").addEventListener("click", startGame);
+ */
+let i = 0;
+while (i < 5) {
+  startGame();
+  i++;
+}
 // Game PC Choice
 function getComputerChoice() {
   const weed = choice[Math.floor(Math.random() * 3)];

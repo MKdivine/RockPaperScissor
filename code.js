@@ -19,18 +19,18 @@ function playGame(humanChoice, computerChoice) {
     console.log("You lose!");
     computerScore++;
   }
-  if (humanScore === 5 || computerScore === 5) {
-    if (humanScore === 5) {
+
+    while (humanScore < 5 && computerScore < 5) {
+      playGame();
+    }
+    if (humanScore > computerScore) {
       console.log("You won the game!");
     } else {
       console.log("You lost the game!");
     }
-    if (computerScore > 5) {
-      console.log("You lost the game!");
-    } else if (humanScore > 5) {
-      console.log("You won the game!");
-    }
   }
+
+
   const humanSelection = getHumanChoice();
   const computerSelection = getComputerChoice();
 
@@ -54,4 +54,4 @@ function playGame(humanChoice, computerChoice) {
       return userInput;
     }
   }
-}
+

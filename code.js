@@ -1,11 +1,10 @@
 const choice = ["rock", "paper", "scissors"];
-let humanScore = 0;
-let computerScore = 0;
 
 // Button functionality and start the game
 
 function playGame(humanChoice, computerChoice) {
-
+  let humanScore = 0;
+  let computerScore = 0;
 
   if (humanChoice === computerChoice) {
     console.log("It's a tie!");
@@ -20,38 +19,39 @@ function playGame(humanChoice, computerChoice) {
     console.log("You lose!");
     computerScore++;
   }
-}
+  if (humanScore === 5 || computerScore === 5) {
+    if (humanScore === 5) {
+      console.log("You won the game!");
+    } else {
+      console.log("You lost the game!");
+    }
+    if (computerScore > 5) {
+      console.log("You lost the game!");
+    } else if (humanScore > 5) {
+      console.log("You won the game!");
+    }
+  }
+  const humanSelection = getHumanChoice();
+  const computerSelection = getComputerChoice();
 
-function startGame() {
-  console.log("Der Button wurde geklickt!");
-  //
-  let humanSelection = getHumanChoice();
-  let computerSelection = getComputerChoice();
   playGame(humanSelection, computerSelection);
-}
 
-// Den Button mit querySelector auswählen und Event-Listener hinzufügen
-/* document.querySelector("#game").addEventListener("click", startGame);
- */
-let i = 0;
-while (i < 5) {
-  startGame();
-  i++;
-}
-// Game PC Choice
-function getComputerChoice() {
-  const weed = choice[Math.floor(Math.random() * 3)];
-  console.log(`The computer chose ${weed}`);
-  return weed;
-}
 
-// Game Human Choice
-function getHumanChoice() {
-  // return the choice alert
-  let userInput = prompt("Enter your choice").toLowerCase();
-  if (choice.includes(userInput)) {
-    //return userInput;
-    console.log(`You chose ${userInput}`);
-    return userInput;
+  // Game PC Choice
+  function getComputerChoice() {
+    const weed = choice[Math.floor(Math.random() * 3)];
+    console.log(`The computer chose ${weed}`);
+    return weed;
+  }
+
+  // Game Human Choice
+  function getHumanChoice() {
+    // return the choice alert
+    let userInput = prompt("Enter your choice").toLowerCase();
+    if (choice.includes(userInput)) {
+      //return userInput;
+      console.log(`You chose ${userInput}`);
+      return userInput;
+    }
   }
 }

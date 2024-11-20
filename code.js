@@ -1,3 +1,5 @@
+let humanScore = 0;
+let computerScore = 0;
 
 // Initial Choice
 const choice = ["rock", "paper", "scissors"];
@@ -5,7 +7,7 @@ const choice = ["rock", "paper", "scissors"];
 // Button functionality
 const body = document.body;
 
-
+  
 
 // Button Loop
 
@@ -22,13 +24,16 @@ const body = document.body;
 
   // Results 
 
-const results = document.createElement("div");
-results.textContent = `Results: ${humanScore} ${computerScore}`;
-body.appendChild(results);
+  const results = document.createElement("div");
+  results.textContent = `Results:  ${humanScore} - ${computerScore}`;
+  
+  body.appendChild(results);
+  
 
 
 // Button functionality and start the game
 function playGame() {
+
   let humanScore = 0;
   let computerScore = 0;
 
@@ -52,6 +57,11 @@ function playGame() {
 
     console.log(`Your score: ${humanScore}`);
     console.log(`Computer score: ${computerScore}`);
+
+    
+
+
+    
 
     // Ask if the user wants to keep playing
     const continueGame = prompt(

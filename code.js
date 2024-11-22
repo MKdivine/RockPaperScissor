@@ -1,43 +1,12 @@
-let humanScore = 0;
-let computerScore = 0;
-
-// Initial Choice
 const choice = ["rock", "paper", "scissors"];
 
-// Button functionality
-const body = document.body;
-
-  
-
-// Button Loop
-
-  choice.forEach((choice) => {
-    const button = document.createElement("button");
-    button.textContent = choice;
-    
-    button.addEventListener("click", () => {
-      console.log(`You chose ${choice}`);
-    });
-    body.appendChild(button);
-    
-  });
-
-  // Results 
-
-  const results = document.createElement("div");
-  results.textContent = `Results:  ${humanScore} - ${computerScore}`;
-  
-  body.appendChild(results);
-  
-
-
 // Button functionality and start the game
-function playGame() {
 
+function playGame() {
   let humanScore = 0;
   let computerScore = 0;
-
-  while (true) {
+  
+  while (humanScore < 5 && computerScore < 5) {
     const humanSelection = getHumanChoice();
     const computerSelection = getComputerChoice();
 
@@ -57,20 +26,12 @@ function playGame() {
 
     console.log(`Your score: ${humanScore}`);
     console.log(`Computer score: ${computerScore}`);
+  }
 
-    
-
-
-    
-
-    // Ask if the user wants to keep playing
-    const continueGame = prompt(
-      "Do you want to keep playing? (yes/no)"
-    ).toLowerCase();
-    if (continueGame !== "yes") {
-      console.log("Thanks for playing!");
-      break;
-    }
+  if (humanScore === 5) {
+    console.log("You are the winner!");
+  } else {
+    console.log("The computer is the winner!");
   }
 }
 

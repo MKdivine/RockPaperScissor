@@ -1,29 +1,24 @@
 const choice = ["rock", "paper", "scissors"];
+let humanScore = 0;
+let computerScore = 0;
+
+// Show the scores
+const  showScore =  document.createElement("div"); 
+showScore.innerHTML = `Your score: ${humanScore} Computer score: ${computerScore}`;
+document.body.appendChild(showScore);
+
+// Show the choice
+
+const choiceShow = document.createElement("div");
+document.body.appendChild(choiceShow);
+
+// Show the result
+const result = document.createElement("div");
+document.body.appendChild(result);
 
 // Button functionality and start the game
 
-const body = document.querySelector("body");
-// Buttons for Rock Paper Scissors
-choice.forEach((element) => {
-  const button = document.createElement("button");
-  button.textContent = element;
-
-  // Div für die Anzeige der Wahl
-  const content = document.createElement("div");
-
-  button.addEventListener("click", () => {
-    console.log(`You chose ${element}`);
-    content.textContent = `You chose: ${element}`;
-    body.appendChild(content);
-  });
-
-  body.appendChild(button);
-});
-
 function playGame() {
-  let humanScore = 0;
-  let computerScore = 0;
-
   while (humanScore < 5 && computerScore < 5) {
     const humanSelection = getHumanChoice();
     const computerSelection = getComputerChoice();
@@ -70,10 +65,4 @@ function getHumanChoice() {
 }
 
 // Start the game
-function startGame() {
-  const startButton = document.getElementById("start-button");
-  startButton.addEventListener("click", () => {
-    playGame();
-  });
-}
-startGame();
+playGame();

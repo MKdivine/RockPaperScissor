@@ -1,5 +1,5 @@
 body {
-    
+
     height: 100vh;
     background-color: #f0f0f0;
     font-family: Arial, sans-serif;
@@ -12,10 +12,14 @@ body {
 
 .icon {
     display: flex;
-    flex-direction: column; /* Anordnung von oben nach unten */
-    align-items: center; /* Zentriert das Bild und den Button horizontal */
-    gap: 10px; /* Abstand zwischen Bild und Button */
-    text-align: center; /* Zentrierter Text */
+    flex-direction: column;
+    /* Anordnung von oben nach unten */
+    align-items: center;
+    /* Zentriert das Bild und den Button horizontal */
+    gap: 10px;
+    /* Abstand zwischen Bild und Button */
+    text-align: center;
+    /* Zentrierter Text */
 }
 
 
@@ -24,12 +28,15 @@ button {
 }
 
 button:hover {
-    background-color: #45a049; /* Dunkleres Grün beim Hover */
-    transform: scale(1.05); /* Leicht vergrößern */
+    background-color: #45a049;
+    /* Dunkleres Grün beim Hover */
+    transform: scale(1.05);
+    /* Leicht vergrößern */
 }
 
 button:active {
-    transform: scale(0.95); /* Leicht verkleinern beim Klicken */
+    transform: scale(0.95);
+    /* Leicht verkleinern beim Klicken */
 }
 
 h1 {
@@ -40,6 +47,12 @@ h1 {
     align-items: center;
     justify-content: center;
     gap: 10px;
+    text-align: center;
+    color: #889e89;
+    font-weight: bold;
+    font-size: 36px;
+    margin-bottom: 20px;
+    
 }
 
 p {
@@ -48,15 +61,18 @@ p {
 }
 
 img {
-    width: 150px; /* Oder jede andere feste Größe */
-    height: auto; /* Proportionen beibehalten */
+    width: 150px;
+    /* Oder jede andere feste Größe */
+    height: auto;
+    /* Proportionen beibehalten */
     border-radius: 10px;
     margin-bottom: auto;
-    box-shadow:  20px 40px 200px rgb(51, 204, 37);
+    box-shadow: 20px 40px 200px rgb(51, 204, 37);
 }
 
 button {
-    width: 140px; /* Gleiche Breite für Konsistenz */
+    width: 140px;
+    /* Gleiche Breite für Konsistenz */
     text-align: center;
     border-radius: 5px;
     padding: 1px;
@@ -74,6 +90,7 @@ button {
 
 @media (max-width: 768px) {
     body {
-        gap: 10px; /* Weniger Platz bei kleineren Bildschirmen */
+        gap: 10px;
+        /* Weniger Platz bei kleineren Bildschirmen */
     }
 }

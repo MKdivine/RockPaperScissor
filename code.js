@@ -17,15 +17,23 @@ document.body.appendChild(result);
 
 // Create Buttons
 
-choice.forEach(x => {
+choice.forEach((choice, x) => {
+  const baseURL = "bilder/";
+  const container = document.createElement("div");
+  container.classList.add("icon");
+
   const button = document.createElement("button");
-  button.textContent = x;
+  button.textContent = choice;
+  button.classList.add("icon");
+
+  const image = document.createElement("img");
+  image.src = `${baseURL}${x + 1}.png`;
+  image.classList.add("icon");
+
+  choiceShow.appendChild(image);
   choiceShow.appendChild(button);
-  
-  })
-
-  
-
+  choiceShow.appendChild(container);
+});
 
 // Button functionality and start the game
 

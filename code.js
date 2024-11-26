@@ -3,18 +3,29 @@ let humanScore = 0;
 let computerScore = 0;
 
 // Show the scores
-const  showScore =  document.createElement("div"); 
+const showScore = document.createElement("div");
 showScore.innerHTML = `Your score: ${humanScore} Computer score: ${computerScore}`;
 document.body.appendChild(showScore);
 
 // Show the choice
-
 const choiceShow = document.createElement("div");
 document.body.appendChild(choiceShow);
 
 // Show the result
 const result = document.createElement("div");
 document.body.appendChild(result);
+
+// Create Buttons
+
+choice.forEach(x => {
+  const button = document.createElement("button");
+  button.textContent = x;
+  choiceShow.appendChild(button);
+  
+  })
+
+  
+
 
 // Button functionality and start the game
 

@@ -1,7 +1,7 @@
 body {
 
     height: 100vh;
-    background-color: #f0f0f0;
+    background-color: #200f16;
     font-family: Arial, sans-serif;
     display: flex;
     flex-direction: column;
@@ -48,7 +48,7 @@ h1 {
     justify-content: center;
     gap: 10px;
     text-align: center;
-    color: #889e89;
+    color: #0dd617;
     font-weight: bold;
     font-size: 36px;
     margin-bottom: 20px;
@@ -67,7 +67,7 @@ img {
     /* Proportionen beibehalten */
     border-radius: 10px;
     margin-bottom: auto;
-    box-shadow: 20px 40px 200px rgb(51, 204, 37);
+    box-shadow: 20px 40px 200px rgb(19, 197, 144);
 }
 
 button {

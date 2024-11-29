@@ -36,7 +36,7 @@ choice.forEach((choice, x) => {
 
   choiceShow.appendChild(image);
   choiceShow.appendChild(button);
-  choiceShow.appendChild(container);
+ 
 });
 
 // Button functionality and start the game
@@ -75,7 +75,6 @@ function resetGame() {
   computerScore = 0;
   showScore.textContent = `Game Reset: ${humanScore} | Computer score: ${computerScore}`;
 }
-
 
 
 // Game PC Choice

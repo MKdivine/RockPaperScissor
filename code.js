@@ -18,8 +18,6 @@ document.body.appendChild(choiceShow);
 
 choice.forEach((choice, x) => {
   const baseURL = "bilder/";
-  const container = document.createElement("div");
-  container.classList.add("icon");
 
   const button = document.createElement("button");
   button.textContent = choice;
@@ -30,13 +28,11 @@ choice.forEach((choice, x) => {
   image.classList.add("icon");
 
   button.addEventListener("click", () => {
-    
     playGame(choice);
   });
 
   choiceShow.appendChild(image);
   choiceShow.appendChild(button);
- 
 });
 
 // Button functionality and start the game
@@ -46,7 +42,6 @@ function playGame(humanSelection) {
 
   if (humanSelection === computerSelection) {
     gameStats.textContent = `It's a tie! Both chose ${humanSelection}.`;
-
   } else if (
     (humanSelection === "rock" && computerSelection === "scissors") ||
     (humanSelection === "paper" && computerSelection === "rock") ||
@@ -63,17 +58,38 @@ function playGame(humanSelection) {
 
   if (humanScore === 5) {
     gameStats.textContent = `You win: ${humanScore} against ${computerScore}`;
-    resetGame()
+    resetGame();
   } else if (computerScore === 5) {
     gameStats.textContent = `The computer wins: ${computerScore}`;
-    resetGame() 
+    resetGame();
   }
 }
 
 function resetGame() {
+  // Punktestand zurücksetzen
   humanScore = 0;
   computerScore = 0;
-  showScore.textContent = `Game Reset: ${humanScore} | Computer score: ${computerScore}`;
+
+  // Anzeigen aktualisieren
+  showScore.textContent = `Your score: ${humanScore} | Computer score: ${computerScore}`;
+  gameStats.textContent = "The game has been reset!";
+
+  // Überprüfen, ob der Button bereits existiert
+  let resetButton = document.querySelector("#resetButton");
+  if (!resetButton) {
+    // "Play again"-Button erstellen
+    resetButton = document.createElement("button");
+    resetButton.textContent = "Play again";
+    resetButton.id = "resetButton";
+    gameStats.appendChild(resetButton);
+
+    // Event-Listener für den Button
+    resetButton.addEventListener("click", () => {
+      // Button entfernen und alles zurücksetzen
+      resetButton.remove();
+      gameStats.textContent = "";
+    });
+  }
 }
 
 

@@ -1,21 +1,25 @@
 const choice = ["rock", "paper", "scissors"];
 let humanScore = 0;
 let computerScore = 0;
+let humanRoundScore = 0;
+let computerRoundScore = 0;
 
 const gameStats = document.createElement("div");
 document.body.appendChild(gameStats);
 
+const roundview = document.createElement("div");
+document.body.appendChild(roundview);
+
 // Show the scores
 const showScore = document.createElement("div");
-showScore.innerHTML = `Your score: ${humanScore} Computer score: ${computerScore}`;
+showScore.innerHTML = `Your score: ${humanScore} | Computer score: ${computerScore}`;
 document.body.appendChild(showScore);
 
 // Show the choice
 const choiceShow = document.createElement("div");
 document.body.appendChild(choiceShow);
-// Show the result
-// Create Buttons
 
+// Create Buttons
 choice.forEach((choice, x) => {
   const baseURL = "bilder/";
 
@@ -35,8 +39,14 @@ choice.forEach((choice, x) => {
   choiceShow.appendChild(button);
 });
 
-// Button functionality and start the game
+// Game PC Choice
+function getComputerChoice() {
+  const weed = choice[Math.floor(Math.random() * 3)];
+  console.log(`The computer chose ${weed}`);
+  return weed;
+}
 
+// Play the game
 function playGame(humanSelection) {
   const computerSelection = getComputerChoice();
 
@@ -47,55 +57,50 @@ function playGame(humanSelection) {
     (humanSelection === "paper" && computerSelection === "rock") ||
     (humanSelection === "scissors" && computerSelection === "paper")
   ) {
-    gameStats.textContent = `You win! ${humanSelection} beats ${computerSelection}`;
+    gameStats.textContent = `You win! ${humanSelection} beats ${computerSelection}.`;
     humanScore++;
   } else {
-    gameStats.textContent = `You lose! ${humanSelection} beats ${computerSelection}`;
+    gameStats.textContent = `You lose! ${computerSelection} beats ${humanSelection}.`;
     computerScore++;
   }
 
   showScore.textContent = `Your score: ${humanScore} | Computer score: ${computerScore}`;
 
-  if (humanScore === 5) {
-    gameStats.textContent = `You win: ${humanScore} against ${computerScore}`;
-    resetGame();
-  } else if (computerScore === 5) {
-    gameStats.textContent = `The computer wins: ${computerScore}`;
-    resetGame();
+  if (humanScore === 5 || computerScore === 5) {
+    if (humanScore === 5) {
+      gameStats.textContent += ` You win the round!`;
+      humanRoundScore++;
+    } else {
+      gameStats.textContent += ` The computer wins the round!`;
+      computerRoundScore++;
+    }
+    roundview.textContent = `You won: ${humanRoundScore} rounds | PC won: ${computerRoundScore} rounds`;
+    createResetButton();
   }
 }
 
-function resetGame() {
-  // Punktestand zurücksetzen
-  humanScore = 0;
-  computerScore = 0;
-
-  // Anzeigen aktualisieren
-  showScore.textContent = `Your score: ${humanScore} | Computer score: ${computerScore}`;
-  gameStats.textContent = "The game has been reset!";
-
-  // Überprüfen, ob der Button bereits existiert
+// Create Reset Button
+function createResetButton() {
   let resetButton = document.querySelector("#resetButton");
   if (!resetButton) {
-    // "Play again"-Button erstellen
     resetButton = document.createElement("button");
     resetButton.textContent = "Play again";
     resetButton.id = "resetButton";
     gameStats.appendChild(resetButton);
 
-    // Event-Listener für den Button
-    resetButton.addEventListener("click", () => {
-      // Button entfernen und alles zurücksetzen
-      resetButton.remove();
-      gameStats.textContent = "";
-    });
+    resetButton.addEventListener("click", resetGame);
   }
 }
 
+// Reset the game
+function resetGame() {
+  humanScore = 0;
+  computerScore = 0;
 
-// Game PC Choice
-function getComputerChoice() {
-  const weed = choice[Math.floor(Math.random() * 3)];
-  console.log(`The computer chose ${weed}`);
-  return weed;
+  showScore.textContent = `Your score: ${humanScore} | Computer score: ${computerScore}`;
+  gameStats.textContent = "The game has been reset!";
+  const resetButton = document.querySelector("#resetButton");
+  if (resetButton) {
+    resetButton.remove();
+  }
 }

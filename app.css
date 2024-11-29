@@ -42,17 +42,14 @@ button:active {
 h1 {
     font-size: 24px;
     margin-bottom: 20px;
-    align-items: center;
-    justify-content: center;
     gap: 10px;
     text-align: center;
     margin: 40px;
-    padding: 20px;
-    color: #0dd617;
+    color: #69bc6b;
     font-weight: bold;
     font-size: 36px;
     margin-bottom: 20px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    text-shadow: 2px 2px 4px rgb(81, 16, 233);
 
 }
 

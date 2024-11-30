@@ -1,7 +1,7 @@
 body {
 
     height: 100vh;
-    background-color: #288a8ae0;
+    background-color: #194ce4e0;
     font-family: Arial, sans-serif;
     display: flex;
     flex-direction: column;
@@ -28,7 +28,7 @@ button {
 }
 
 button:hover {
-    background-color: #45a049;
+    background-color: #247629;
     /* Dunkleres Grün beim Hover */
     transform: scale(1.05);
     /* Leicht vergrößern */
@@ -45,7 +45,7 @@ h1 {
     gap: 10px;
     text-align: center;
     margin: 40px;
-    color: #69bc6b;
+    color: #cdddf0;
     font-weight: bold;
     font-size: 36px;
     margin-bottom: 20px;
